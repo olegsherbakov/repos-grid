@@ -1,7 +1,7 @@
 const path = require(`path`)
 const yargs = require('yargs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const isProduction = yargs.argv.p
+const isProduction = yargs.argv.mode === 'production'
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
@@ -67,12 +67,12 @@ module.exports = {
       filename: 'styles.css',
     }),
   ],
-  externals: Object.entries({
+  externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
     'mobx': 'mobx',
     'mobx-react': 'mobxReact',
-  }).reduce((o, [key, prop]) => { isProduction ? (o[key] = key) : (o[key] = prop); return o; }, {}),
+  },
   output: {
     library: 'GithubReposGrid',
     libraryTarget: 'umd',
