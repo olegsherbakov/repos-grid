@@ -42,13 +42,13 @@ class Store implements IStore {
       .sort((a, b) => this.sortFn(this.sortColumn, a, b))
   }
 }
-// implementation
+// implementation & mocks
 const store = new Store()
 
-function api(username: string): Promise<[]> {
+function api(user: string): Promise<[]> {
   const { url, ...options } = endpoint(`GET /users/:user/repos`, {
-    user: username,
-    type: `private`,
+    per_page: 100,
+    user,
   })
 
   return fetchRepos(url, options)
