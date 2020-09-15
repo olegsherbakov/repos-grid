@@ -10,11 +10,11 @@ import Panel from '@lib/Panel'
 
 const columns = [
   `name`,
-  `language`,
-  `url`,
-  `homepage`,
   `description`,
-  `created_at`,
+  `language`,
+  `forks`,
+  `git_url`,
+  `size`,
 ]
 const externalSortFn: ISortFn = (column, rowA, rowB): number => {
   const a = rowA[column]
