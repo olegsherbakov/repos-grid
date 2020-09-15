@@ -1,0 +1,42 @@
+{
+  "version": "0.0.1",
+  "name": "repos-grid",
+  "author": "Oleg Sherbakov <oleg.sherbakov.85@gmail.com>",
+  "private": true,
+  "scripts": {
+    "develop": "webpack --watch",
+    "prod": "npm install && npm webpack -p",
+    "format": "prettier --write \"src/**/*.{tsx,ts,sccs}\""
+  },
+  "dependencies": {
+    "@octokit/endpoint": "^6.0.6",
+    "@octokit/request-error": "^2.0.2",
+    "@octokit/types": "^5.5.0",
+    "mobx": "^5.15.6",
+    "mobx-react": "^6.3.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^26.0.13",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "classnames": "^2.2.6",
+    "css-loader": "^3.5.1",
+    "css-modules-typescript-loader": "^4.0.0",
+    "jest": "^26.4.2",
+    "mini-css-extract-plugin": "^0.11.2",
+    "node-sass": "^4.13.1",
+    "postcss-loader": "^4.0.1",
+    "prettier": "^2.1.1",
+    "sass-loader": "^8.0.2",
+    "source-map-loader": "^1.1.0",
+    "ts-jest": "^26.0.0",
+    "ts-loader": "^8.0.3",
+    "typescript": "^4.0.2",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
