@@ -2,18 +2,16 @@ import * as React from 'react'
 import { observer } from 'mobx-react'
 import cn from 'classnames'
 
-import { TGridRow } from '../types'
-import app from '../app'
-import { useGrid } from '../hooks'
+import { TGridRow } from 'src/types'
+import { useGrid } from 'src/hooks'
+import app from 'src/app'
+
 import s from '@styles/index.scss'
 
 const Grid: React.FC<{ renderRow: Function }> = observer(({ renderRow }) => {
   const gridStore = useGrid()
-  const onClickHeader = (event: React.MouseEvent<HTMLElement>): void => {
-    const column: string = event.currentTarget.getAttribute(`data-column`)
-
-    app.changeSort(column)
-  }
+  const onClickHeader = (event: React.MouseEvent<HTMLElement>): void =>
+    app.changeSort(event.currentTarget.getAttribute(`data-column`))
 
   return (
     <>
@@ -24,7 +22,7 @@ const Grid: React.FC<{ renderRow: Function }> = observer(({ renderRow }) => {
         </>
       ) : gridStore.isLoading ? (
         <h1 className={s.H1}>Please wait, data is loading...</h1>
-      ) : !!gridStore.grid.length ? (
+      ) : gridStore.grid.length ? (
         <div className={s.Grid}>
           <div className={s.Row}>
             {gridStore.columns.map((column: string) => (

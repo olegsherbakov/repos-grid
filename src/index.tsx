@@ -2,8 +2,8 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Provider } from 'mobx-react'
 
-import { ISortFn, TGridRow } from './types'
-import app from './app'
+import { ISortFn, TGridRow } from 'src/types'
+import app from 'src/app'
 import Grid from '@lib/Grid'
 import Layout from '@lib/Layout'
 import Panel from '@lib/Panel'
@@ -69,3 +69,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById(`app`)
 )
+
+export default app
